@@ -1,9 +1,11 @@
 const Token = require('../models/token');
 
+// Get token details by token string
 exports.getToken = async (req, res) => {
   const { token } = req.params;
 
   try {
+    // Find the token in the database
     const tokenDoc = await Token.findOne({ token });
 
     if (!tokenDoc) {

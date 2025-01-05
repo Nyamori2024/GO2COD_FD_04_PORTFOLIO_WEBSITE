@@ -1,7 +1,9 @@
 const User = require('../models/user');
 
+// Get user profile
 exports.getUserProfile = async (req, res) => {
   try {
+    // Find the user by ID and exclude the password field
     const user = await User.findById(req.user.id).select('-password');
 
     if (!user) {

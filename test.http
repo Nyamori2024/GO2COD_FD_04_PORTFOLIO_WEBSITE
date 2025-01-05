@@ -1,3 +1,0 @@
-### Send Test Email
-GET http://localhost:5000/api/test/send-test-email
-Content-Type: application/json
