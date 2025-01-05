@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Box, Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -43,27 +42,27 @@ const Header = () => {
             </IconButton>
             <Drawer anchor="top" open={isDrawerOpen} onClose={toggleDrawer}>
               <List>
-                <ListItem component="button" button onClick={() => handleNavigation('/portfolio')}>
+                <ListItem component="button" sx={{ padding: 2 }} onClick={() => handleNavigation('/portfolio')}>
                   <ListItemText primary="Portfolio" />
                 </ListItem>
-                <ListItem component="button" button onClick={() => handleNavigation('/blog')}>
+                <ListItem component="button" sx={{ padding: 2 }} onClick={() => handleNavigation('/blog')}>
                   <ListItemText primary="Blog" />
                 </ListItem>
                 {user && user.role === 'admin' && (
-                  <ListItem component="button" button onClick={() => handleNavigation('/admin')}>
+                  <ListItem component="button" sx={{ padding: 2 }} onClick={() => handleNavigation('/admin')}>
                     <ListItemText primary="Admin" />
                   </ListItem>
                 )}
                 {user ? (
-                  <ListItem component="button" button onClick={handleLogout}>
+                  <ListItem component="button" sx={{ padding: 2 }} onClick={handleLogout}>
                     <ListItemText primary="Logout" />
                   </ListItem>
                 ) : (
                   <>
-                    <ListItem component="button" button onClick={() => handleNavigation('/login')}>
+                    <ListItem component="button" sx={{ padding: 2 }} onClick={() => handleNavigation('/login')}>
                       <ListItemText primary="Login" />
                     </ListItem>
-                    <ListItem component="button" button onClick={() => handleNavigation('/register')}>
+                    <ListItem component="button" sx={{ padding: 2 }} onClick={() => handleNavigation('/register')}>
                       <ListItemText primary="Register" />
                     </ListItem>
                   </>
